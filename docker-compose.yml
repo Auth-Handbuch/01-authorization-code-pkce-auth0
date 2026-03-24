@@ -1,27 +1,14 @@
 services:
   api:
-    build:
-      context: ./api
-      dockerfile: Dockerfile
+    build: ./api
     ports:
       - "3000:3000"
     environment:
       - ASPNETCORE_URLS=http://+:3000
-      - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - app-network
 
   frontend:
-    build:
-      context: ./public-client
-      dockerfile: Dockerfile
+    build: ./public-client
     ports:
       - "4000:80"
     depends_on:
       - api
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
