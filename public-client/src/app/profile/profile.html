@@ -1,0 +1,45 @@
+@if (profile(); as profile) {
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img [src]="profile.picture" [alt]="profile.name" class="profile-avatar" />
+        <div class="profile-header-info">
+          <h1 class="profile-name">{{ profile.name }}</h1>
+          <p class="profile-nickname">@{{ profile.nickname }}</p>
+        </div>
+      </div>
+
+      <div class="profile-details">
+        <div class="detail-item">
+          <span class="detail-label">Given Name</span>
+          <span class="detail-value">{{ profile.given_name }}</span>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-label">Family Name</span>
+          <span class="detail-value">{{ profile.family_name }}</span>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-label">Email</span>
+          <span class="detail-value">
+            {{ profile.email }}
+            @if (profile.email_verified) {
+              <span class="verified-badge">✓ Verified</span>
+            }
+          </span>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-label">User ID</span>
+          <span class="detail-value user-id">{{ profile.sub }}</span>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-label">Last Updated</span>
+          <span class="detail-value">{{ profile.updated_at | date : 'medium' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+}
