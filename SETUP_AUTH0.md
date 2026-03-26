@@ -2,6 +2,8 @@
 
 Die Konfiguration von Auth0 umfasst mehrere Schritte, die sowohl die Angular-Anwendung als auch die .NET Core API als eigenständige Entitäten im OAuth-Ökosystem registrieren. Auth0 unterscheidet dabei zwischen **Applications** (Clients) und **APIs** (Resource Servern).
 
+> **Wichtig:** Für die folgenden Schritte wird ein Auth0-Account benötigt, der unter [auth0.com](https://auth0.com) kostenlos erstellt werden kann. Für kleinere Entwicklungs- und Testzwecke reicht der kostenlose Free-Tier vollständig aus.
+
 Für eine vollständige Übersicht aller Optionen empfiehlt sich die [offizielle Auth0-Dokumentation](https://auth0.com/docs).
 
 ---
